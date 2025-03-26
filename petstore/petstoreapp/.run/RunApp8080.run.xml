@@ -1,0 +1,18 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="RunApp8080" type="Application" factoryName="Application">
+    <option name="ALTERNATIVE_JRE_PATH" value="$PROJECT_DIR$/../../../../../../../jdk-18.0.1.1" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
+    <envs>
+      <env name="PETSTOREAPP_SERVER_PORT" value="8080" />
+      <env name="PETSTOREPETSERVICE_URL" value="http://localhost:8080" />
+      <env name="PETSTOREPRODUCTSERVICE_URL" value="http://localhost:8080" />
+      <env name="PETSTOREORDERSERVICE_URL" value="http://localhost:8080" />
+    </envs>
+    <option name="MAIN_CLASS_NAME" value="com.chtrembl.petstoreapp.PetstoreappApplication" />
+    <module name="petstoreapp" />
+    <option name="WORKING_DIRECTORY" value="$MODULE_WORKING_DIR$" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>

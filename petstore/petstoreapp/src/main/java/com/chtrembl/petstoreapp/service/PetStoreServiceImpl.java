@@ -46,6 +46,8 @@ public class PetStoreServiceImpl implements PetStoreService {
 	private WebClient productServiceWebClient = null;
 	private WebClient orderServiceWebClient = null;
 
+	private WebClient azureFunctionClient = null;
+
 	public PetStoreServiceImpl(User sessionUser, ContainerEnvironment containerEnvironment, WebRequest webRequest) {
 		this.sessionUser = sessionUser;
 		this.containerEnvironment = containerEnvironment;
@@ -60,6 +62,8 @@ public class PetStoreServiceImpl implements PetStoreService {
 		this.productServiceWebClient = WebClient.builder()
 				.baseUrl(this.containerEnvironment.getPetStoreProductServiceURL()).build();
 		this.orderServiceWebClient = WebClient.builder().baseUrl(this.containerEnvironment.getPetStoreOrderServiceURL())
+				.build();
+		this.azureFunctionClient = WebClient.builder().baseUrl(this.containerEnvironment.getAzureFunctionURL())
 				.build();
 	}
 
@@ -118,7 +122,7 @@ public class PetStoreServiceImpl implements PetStoreService {
 	}
 
 	@Override
-	public Collection<Product> getProducts(String category, List<Tag> tags) throws Exception {
+	public Collection<Product> getProducts(String category, List<Tag> tags) {
 		List<Product> products = new ArrayList<>();
 
 		try {
@@ -133,31 +137,25 @@ public class PetStoreServiceImpl implements PetStoreService {
 					.bodyToMono(new ParameterizedTypeReference<List<Product>>() {
 					}).block();
 
+			// use this for look up on details page, intentionally avoiding spring cache to
+			// ensure service calls are made each for each browser session
+			// to show Telemetry with APIM requests (normally this would be cached in a real
+			// world production scenario)
 			this.sessionUser.setProducts(products);
 
-			this.sessionUser.getTelemetryClient().trackEvent(
-					String.format("PetStoreApp user %s is requesting to retrieve pets from the PetStorePetService for sessionId %s",
-							this.sessionUser.getName(), this.sessionUser.getSessionId()),
-					this.sessionUser.getCustomEventProperties(), null);
-
-			throw new Exception("Cannot move further");
-
 			// filter this specific request per category
-//			if (tags.stream().anyMatch(t -> t.getName().equals("large"))) {
-//				products = products.stream().filter(product -> category.equals(product.getCategory().getName())
-//						&& product.getTags().toString().contains("large")).collect(Collectors.toList());
-//			} else {
-//
-//				products = products.stream().filter(product -> category.equals(product.getCategory().getName())
-//						&& product.getTags().toString().contains("small")).collect(Collectors.toList());
-//			}
-//			logger.info("PetStoreApp user added {} no. of products in cart",products.size());
-//			this.sessionUser.getTelemetryClient().trackMetric("Number of products added to cart", products.size());
+			if (tags.stream().anyMatch(t -> t.getName().equals("large"))) {
+				products = products.stream().filter(product -> category.equals(product.getCategory().getName())
+						&& product.getTags().toString().contains("large")).collect(Collectors.toList());
+			} else {
 
-//			return products;
+				products = products.stream().filter(product -> category.equals(product.getCategory().getName())
+						&& product.getTags().toString().contains("small")).collect(Collectors.toList());
+			}
+			return products;
 		} catch (
 
-		WebClientException wce) {
+				WebClientException wce) {
 			// little hack to visually show the error message within our Azure Pet Store
 			// Reference Guide (Academic Tutorial)
 			Product product = new Product();
@@ -213,6 +211,14 @@ public class PetStoreServiceImpl implements PetStoreService {
 
 			updatedOrder = this.orderServiceWebClient.post().uri("petstoreorderservice/v2/store/order")
 					.body(BodyInserters.fromPublisher(Mono.just(orderJSON), String.class))
+					.accept(MediaType.APPLICATION_JSON)
+					.headers(consumer)
+					.header("Content-Type", MediaType.APPLICATION_JSON_VALUE)
+					.header("Cache-Control", "no-cache")
+					.retrieve()
+					.bodyToMono(Order.class).block();
+
+			this.azureFunctionClient.post().body(BodyInserters.fromPublisher(Mono.just(orderJSON), String.class))
 					.accept(MediaType.APPLICATION_JSON)
 					.headers(consumer)
 					.header("Content-Type", MediaType.APPLICATION_JSON_VALUE)

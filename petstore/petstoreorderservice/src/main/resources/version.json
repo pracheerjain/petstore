@@ -1,1 +1,4 @@
-{"version":"version1","date":"date1"}
+{
+  "version": "${project.version}",
+  "date": "${maven.build.timestamp}"
+}

@@ -1,25 +1,13 @@
 package com.chtrembl.petstore.order.model;
 
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-@SuppressWarnings("serial")
-public class Version implements Serializable {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Version {
 	private String version;
 	private String date;
-
-	public String getVersion() {
-		return version;
-	}
-
-	public void setVersion(String version) {
-		this.version = version;
-	}
-
-	public String getDate() {
-		return date;
-	}
-
-	public void setDate(String date) {
-		this.date = date;
-	}
 }

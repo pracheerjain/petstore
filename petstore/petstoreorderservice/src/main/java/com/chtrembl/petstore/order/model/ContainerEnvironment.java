@@ -1,37 +1,31 @@
 package com.chtrembl.petstore.order.model;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import jakarta.annotation.PostConstruct;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
+
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.Reader;
-import java.io.Serializable;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Calendar;
 
-import javax.annotation.PostConstruct;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.core.io.ClassPathResource;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microsoft.applicationinsights.core.dependencies.google.common.io.CharStreams;
-
-import ch.qos.logback.core.joran.spi.JoranException;
-
-@SuppressWarnings("serial")
-public class ContainerEnvironment implements Serializable {
-	private static Logger logger = LoggerFactory.getLogger(ContainerEnvironment.class);
-	private String containerHostName = null;
-	private String appVersion = null;
-	private String appDate = null;
-	private String year = null;
-	private String author = "Chris Tremblay MSFT";
+@Component
+@Setter
+@Getter
+@Slf4j
+public class ContainerEnvironment {
+	private String containerHostName;
+	private String appVersion;
+	private String appDate;
+	private String year;
 
 	@PostConstruct
-	private void initialize() throws JoranException {
-
+	private void initialize() {
 		try {
 			this.setContainerHostName(
 					InetAddress.getLocalHost().getHostAddress() + "/" + InetAddress.getLocalHost().getHostName());
@@ -41,17 +35,15 @@ public class ContainerEnvironment implements Serializable {
 
 		try {
 			ObjectMapper objectMapper = new ObjectMapper();
-			InputStream resourcee = new ClassPathResource("version.json").getInputStream();
-			String text = null;
-			try (final Reader reader = new InputStreamReader(resourcee)) {
-				text = CharStreams.toString(reader);
-			}
+			ClassPathResource resource = new ClassPathResource("version.json");
 
-			Version version = objectMapper.readValue(text, Version.class);
-			this.setAppVersion(version.getVersion());
-			this.setAppDate(version.getDate());
+			try (InputStream inputStream = resource.getInputStream()) {
+				Version version = objectMapper.readValue(inputStream, Version.class);
+				this.setAppVersion(version.getVersion());
+				this.setAppDate(version.getDate());
+			}
 		} catch (IOException e) {
-			logger.info("error parsing file " + e.getMessage());
+			log.error("Error parsing file {}", e.getMessage());
 			this.setAppVersion("unknown");
 			this.setAppDate("unknown");
 		}
@@ -59,39 +51,10 @@ public class ContainerEnvironment implements Serializable {
 		this.setYear(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
 	}
 
-	public String getContainerHostName() {
-		return containerHostName;
-	}
-
-	public void setContainerHostName(String containerHostName) {
-		this.containerHostName = containerHostName;
-	}
-
 	public String getAppVersion() {
-		return appVersion;
-	}
-
-	public void setAppVersion(String appVersion) {
-		this.appVersion = appVersion;
-	}
-
-	public String getAppDate() {
-		return appDate;
-	}
-
-	public void setAppDate(String appDate) {
-		this.appDate = appDate;
-	}
-
-	public String getYear() {
-		return year;
-	}
-
-	public void setYear(String year) {
-		this.year = year;
-	}
-
-	public String getAuthor() {
-		return author;
+		if ("version".equals(this.appVersion) || this.appVersion == null) {
+			return String.valueOf(System.currentTimeMillis());
+		}
+		return this.appVersion;
 	}
 }

@@ -1,58 +1,84 @@
 package com.chtrembl.petstore.order.model;
 
-import java.io.Serializable;
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonValue;
+import io.swagger.v3.oas.annotations.media.Schema;
+import jakarta.validation.Valid;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
+import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
-import javax.validation.Valid;
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
+@EqualsAndHashCode(exclude = {"products"})
+@Schema(description = "Order entity representing a customer order")
+public class Order {
 
-import org.springframework.validation.annotation.Validated;
-import org.threeten.bp.OffsetDateTime;
+	@NotNull(message = "Order ID cannot be null")
+	@Pattern(
+			regexp = "^[0-9A-F]{32}$",
+			message = "Order ID must be a 32-character uppercase hexadecimal string"
+	)
+	@Schema(
+			description = "Order identifier (typically session ID)",
+			example = "68FAE9B1D86B794F0AE0ADD35A437428"
+	)
+	private String id;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonValue;
+	@Size(max = 255, message = "Email must not exceed 255 characters")
+	@Schema(description = "Customer email address",
+			example = "customer@example.com")
+	private String email;
 
-import io.swagger.annotations.ApiModelProperty;
-
-/**
- * Order
- */
-@Validated
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.SpringCodegen", date = "2021-12-23T15:16:30.446-05:00")
-
-public class Order implements Serializable {
-	@JsonProperty("id")
-	private String id = null;
-
-	@JsonProperty("email")
-	private String email = null;
-
-	@JsonProperty("products")
 	@Valid
-	private List<Product> products = null;
+	@Builder.Default
+	@Schema(description = "List of products in the order")
+	private List<Product> products = new ArrayList<>();
 
-	@JsonProperty("shipDate")
-	private OffsetDateTime shipDate = null;
+	@Schema(description = "Order status", example = "placed")
+	private Status status;
 
-	@JsonProperty("tags")
-	@Valid
-	private List<Tag> tags = null;
+	@Builder.Default
+	@Schema(description = "Whether the order is completed", example = "false")
+	private Boolean complete = false;
+
+	public Boolean getComplete() {
+		return complete != null ? complete : false;
+	}
+
+	public void setComplete(Boolean complete) {
+		this.complete = complete != null ? complete : false;
+	}
+
+	public List<Product> getProducts() {
+		return products != null ? products : new ArrayList<>();
+	}
+
+	public void setProducts(List<Product> products) {
+		this.products = products != null ? products : new ArrayList<>();
+	}
 
 	/**
 	 * Order Status
 	 */
-	public enum StatusEnum {
+	public enum Status {
 		PLACED("placed"),
-
 		APPROVED("approved"),
-
 		DELIVERED("delivered");
 
-		private String value;
+		private final String value;
 
-		StatusEnum(String value) {
+		Status(String value) {
 			this.value = value;
 		}
 
@@ -63,214 +89,17 @@ public class Order implements Serializable {
 		}
 
 		@JsonCreator
-		public static StatusEnum fromValue(String text) {
-			for (StatusEnum b : StatusEnum.values()) {
-				if (String.valueOf(b.value).equals(text)) {
-					return b;
+		public static Status fromValue(String text) {
+			if (text == null) {
+				return null;
+			}
+
+			for (Status status : Status.values()) {
+				if (String.valueOf(status.value).equalsIgnoreCase(text.trim())) {
+					return status;
 				}
 			}
 			return null;
 		}
-	}
-
-	@JsonProperty("status")
-	private StatusEnum status = null;
-
-	@JsonProperty("complete")
-	private Boolean complete = null;
-
-	public Order id(String id) {
-		this.id = id;
-		return this;
-	}
-
-	/**
-	 * Get id
-	 * 
-	 * @return id
-	 **/
-	@ApiModelProperty(value = "")
-
-	public String getId() {
-		return id;
-	}
-
-	public void setId(String id) {
-		this.id = id;
-	}
-
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
-
-	public Order products(List<Product> products) {
-		this.products = products;
-		return this;
-	}
-
-	public Order addProductsItem(Product productsItem) {
-		if (this.products == null) {
-			this.products = new ArrayList<Product>();
-		}
-		this.products.add(productsItem);
-		return this;
-	}
-
-	/**
-	 * Get products
-	 * 
-	 * @return products
-	 **/
-	@ApiModelProperty(value = "")
-
-	@Valid
-
-	public List<Product> getProducts() {
-		return products;
-	}
-
-	public void setProducts(List<Product> products) {
-		this.products = products;
-	}
-
-	public Order shipDate(OffsetDateTime shipDate) {
-		this.shipDate = shipDate;
-		return this;
-	}
-
-	/**
-	 * Get shipDate
-	 * 
-	 * @return shipDate
-	 **/
-	@ApiModelProperty(value = "")
-
-	@Valid
-
-	public OffsetDateTime getShipDate() {
-		return shipDate;
-	}
-
-	public void setShipDate(OffsetDateTime shipDate) {
-		this.shipDate = shipDate;
-	}
-
-	public Order tags(List<Tag> tags) {
-		this.tags = tags;
-		return this;
-	}
-
-	public Order addTagsItem(Tag tagsItem) {
-		if (this.tags == null) {
-			this.tags = new ArrayList<Tag>();
-		}
-		this.tags.add(tagsItem);
-		return this;
-	}
-
-	/**
-	 * Get tags
-	 * 
-	 * @return tags
-	 **/
-	@ApiModelProperty(value = "")
-
-	@Valid
-
-	public List<Tag> getTags() {
-		return tags;
-	}
-
-	public void setTags(List<Tag> tags) {
-		this.tags = tags;
-	}
-
-	public Order status(StatusEnum status) {
-		this.status = status;
-		return this;
-	}
-
-	/**
-	 * Order Status
-	 * 
-	 * @return status
-	 **/
-	@ApiModelProperty(value = "Order Status")
-
-	public StatusEnum getStatus() {
-		return status;
-	}
-
-	public void setStatus(StatusEnum status) {
-		this.status = status;
-	}
-
-	public Order complete(Boolean complete) {
-		this.complete = complete;
-		return this;
-	}
-
-	/**
-	 * Get complete
-	 * 
-	 * @return complete
-	 **/
-	@ApiModelProperty(value = "")
-
-	public Boolean isComplete() {
-		return complete;
-	}
-
-	public void setComplete(Boolean complete) {
-		this.complete = complete;
-	}
-
-	@Override
-	public boolean equals(java.lang.Object o) {
-		if (this == o) {
-			return true;
-		}
-		if (o == null || getClass() != o.getClass()) {
-			return false;
-		}
-		Order order = (Order) o;
-		return Objects.equals(this.id, order.id) && Objects.equals(this.products, order.products)
-				&& Objects.equals(this.shipDate, order.shipDate) && Objects.equals(this.tags, order.tags)
-				&& Objects.equals(this.status, order.status) && Objects.equals(this.complete, order.complete);
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(id, products, shipDate, tags, status, complete);
-	}
-
-	@Override
-	public String toString() {
-		StringBuilder sb = new StringBuilder();
-		sb.append("class Order {\n");
-
-		sb.append("    id: ").append(toIndentedString(id)).append("\n");
-		sb.append("    products: ").append(toIndentedString(products)).append("\n");
-		sb.append("    shipDate: ").append(toIndentedString(shipDate)).append("\n");
-		sb.append("    tags: ").append(toIndentedString(tags)).append("\n");
-		sb.append("    status: ").append(toIndentedString(status)).append("\n");
-		sb.append("    complete: ").append(toIndentedString(complete)).append("\n");
-		sb.append("}");
-		return sb.toString();
-	}
-
-	/**
-	 * Convert the given object to string with each line indented by 4 spaces
-	 * (except the first line).
-	 */
-	private String toIndentedString(java.lang.Object o) {
-		if (o == null) {
-			return "null";
-		}
-		return o.toString().replace("\n", "\n    ");
 	}
 }

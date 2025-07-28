@@ -57,6 +57,7 @@ public class OrderController {
 
         log.info("Incoming POST request to /petstoreorderservice/v2/store/order with order: {}", order);
 
+//        Order updatedOrder = null;
         Order updatedOrder = orderService.updateOrder(order);
 
         // Enrich order with product details from product service
@@ -87,7 +88,7 @@ public class OrderController {
             String orderId) {
 
         log.info("Incoming GET request to /petstoreorderservice/v2/store/order/{}", orderId);
-
+//        Order order = null;
         Order order = orderService.getOrderById(orderId);
 
         // Enrich order with product details from product service

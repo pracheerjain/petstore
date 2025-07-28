@@ -3,11 +3,9 @@ package com.chtrembl.petstore.order.service;
 import com.chtrembl.petstore.order.exception.OrderNotFoundException;
 import com.chtrembl.petstore.order.model.Order;
 import com.chtrembl.petstore.order.model.Product;
-import lombok.RequiredArgsConstructor;
+import com.chtrembl.petstore.order.repository.OrderRepository;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.cache.Cache;
-import org.springframework.cache.CacheManager;
-import org.springframework.cache.annotation.Cacheable;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -17,14 +15,23 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 public class OrderService {
 
     private static final String ORDERS = "orders";
-    private final CacheManager cacheManager;
+//    private final CacheManager cacheManager;
+
+    @Autowired
     private final ProductService productService;
 
-    @Cacheable(ORDERS)
+    @Autowired
+    private OrderRepository orderRepository;
+
+    public OrderService(ProductService productService) {
+        this.productService = productService;
+    }
+
+    //    @Cacheable(ORDERS)
     public Order createOrder(String orderId) {
         log.info("Creating new order with id: {} and caching it", orderId);
         return Order.builder()
@@ -43,29 +50,43 @@ public class OrderService {
      * @throws OrderNotFoundException if order does not exist
      */
     public Order getOrderById(String orderId) {
-        log.info("Retrieving order from cache: {}", orderId);
+        log.info("Retrieving order from repository: {}", orderId);
 
         // Validate orderId (not covered by Bean Validation for path variables)
         if (orderId == null || orderId.trim().isEmpty()) {
             throw new IllegalArgumentException("Order ID cannot be null or empty");
         }
 
-        // Try to get from cache
-        Cache cache = cacheManager.getCache(ORDERS);
-        if (cache != null) {
-            Cache.ValueWrapper wrapper = cache.get(orderId);
-            if (wrapper != null) {
-                Order cachedOrder = (Order) wrapper.get();
-                if (cachedOrder != null) {
-                    log.info("Found existing order: {}", orderId);
-                    return cachedOrder;
-                }
-            }
-        }
+        // Try to get from cosmos DB
+        Order orderById = getOrderByOrderId(orderId);
+        if (orderById != null) return orderById;
+
+//        // Try to get from cache
+//        Cache cache = cacheManager.getCache(ORDERS);
+//        if (cache != null) {
+//            Cache.ValueWrapper wrapper = cache.get(orderId);
+//            if (wrapper != null) {
+//                Order existingOrder = (Order) wrapper.get();
+//                if (existingOrder != null) {
+//                    log.info("Found existing order: {}", orderId);
+//                    return existingOrder;
+//                }
+//            }
+//        }
 
         // Order not found - throw exception instead of creating new one
         log.warn("Order not found: {}", orderId);
         throw new OrderNotFoundException("Order with ID " + orderId + " not found");
+    }
+
+    private Order getOrderByOrderId(String orderId) {
+        Optional<Order> orderById= orderRepository.findById(orderId);
+
+        if (orderById.isPresent()){
+            log.info("Found existing order: {}", orderId);
+            return orderById.get();
+        }
+        return null;
     }
 
     /**
@@ -75,25 +96,30 @@ public class OrderService {
     public Order getOrCreateOrder(String orderId) {
         log.info("Getting or creating order: {}", orderId);
 
-        // Try to get from cache first
-        Cache cache = cacheManager.getCache(ORDERS);
-        if (cache != null) {
-            Cache.ValueWrapper wrapper = cache.get(orderId);
-            if (wrapper != null) {
-                Order cachedOrder = (Order) wrapper.get();
-                if (cachedOrder != null) {
-                    log.info("Found existing order for update: {}", orderId);
-                    return cachedOrder;
-                }
-            }
-        }
+        // Try to get from cosmos DB first
+        Order orderById = getOrderByOrderId(orderId);
+        if (orderById != null) return orderById;
+
+//        // Try to get from cache first
+//        Cache cache = cacheManager.getCache(ORDERS);
+//        if (cache != null) {
+//            Cache.ValueWrapper wrapper = cache.get(orderId);
+//            if (wrapper != null) {
+//                Order existingOrder = (Order) wrapper.get();
+//                if (existingOrder != null) {
+//                    log.info("Found existing order for update: {}", orderId);
+//                    return existingOrder;
+//                }
+//            }
+//        }
 
         // Create new order if not found
         log.info("Creating new order for update: {}", orderId);
         Order newOrder = createOrder(orderId);
-        if (cache != null) {
-            cache.put(orderId, newOrder);
-        }
+        orderRepository.save(newOrder);
+//        if (cache != null) {
+//            cache.put(orderId, newOrder);
+//        }
 
         return newOrder;
     }
@@ -108,34 +134,37 @@ public class OrderService {
         }
 
         // Use getOrCreateOrder for updates (allows creation)
-        Order cachedOrder = getOrCreateOrder(order.getId());
+        Order existingOrder = getOrCreateOrder(order.getId());
 
         // Update basic fields
-        cachedOrder.setEmail(order.getEmail());
+        existingOrder.setEmail(order.getEmail());
 
         // Update status only if new status is provided
         if (order.getStatus() != null) {
-            cachedOrder.setStatus(order.getStatus());
+            existingOrder.setStatus(order.getStatus());
         }
 
         // Handle completion status
         Boolean isComplete = order.getComplete();
         if (isComplete != null && isComplete) {
             log.info("Completing order {} - clearing products", order.getId());
-            cachedOrder.setProducts(new ArrayList<>());
-            cachedOrder.setComplete(true);
+            existingOrder.setProducts(new ArrayList<>());
+            existingOrder.setComplete(true);
         } else {
-            cachedOrder.setComplete(isComplete != null ? isComplete : false);
-            updateOrderProducts(cachedOrder, order.getProducts());
+            existingOrder.setComplete(isComplete != null ? isComplete : false);
+            updateOrderProducts(existingOrder, order.getProducts());
         }
+
+        // Explicitly update cosmos DB
+        orderRepository.save(existingOrder);
 
         // Explicitly update cache
-        Cache cache = cacheManager.getCache(ORDERS);
-        if (cache != null) {
-            cache.put(order.getId(), cachedOrder);
-        }
+//        Cache cache = cacheManager.getCache(ORDERS);
+//        if (cache != null) {
+//            cache.put(order.getId(), existingOrder);
+//        }
 
-        return cachedOrder;
+        return existingOrder;
     }
 
     /**
@@ -174,26 +203,26 @@ public class OrderService {
         log.debug("Product validation passed for {} products", requestedProductIds.size());
     }
 
-    private void updateOrderProducts(Order cachedOrder, List<Product> incomingProducts) {
+    private void updateOrderProducts(Order existingOrder, List<Product> incomingProducts) {
         if (incomingProducts == null || incomingProducts.isEmpty()) {
             return;
         }
 
         // Single product update (add/remove/update from product page)
         if (incomingProducts.size() == 1) {
-            handleSingleProductUpdate(cachedOrder, incomingProducts.getFirst());
+            handleSingleProductUpdate(existingOrder, incomingProducts.stream().findFirst().get());
         }
         // Multiple products (cart update)
         else {
-            cachedOrder.setProducts(new ArrayList<>(incomingProducts));
+            existingOrder.setProducts(new ArrayList<>(incomingProducts));
         }
     }
 
-    private void handleSingleProductUpdate(Order cachedOrder, Product incomingProduct) {
-        List<Product> existingProducts = cachedOrder.getProducts();
+    private void handleSingleProductUpdate(Order existingOrder, Product incomingProduct) {
+        List<Product> existingProducts = existingOrder.getProducts();
         if (existingProducts == null) {
             existingProducts = new ArrayList<>();
-            cachedOrder.setProducts(existingProducts);
+            existingOrder.setProducts(existingProducts);
         }
 
         Integer quantity = incomingProduct.getQuantity();
@@ -215,16 +244,16 @@ public class OrderService {
             if (newQuantity <= 0) {
                 existingProducts.removeIf(p -> p.getId().equals(incomingProduct.getId()));
                 log.info("Removed product {} from order {} (quantity became {})",
-                        incomingProduct.getId(), cachedOrder.getId(), newQuantity);
+                        incomingProduct.getId(), existingOrder.getId(), newQuantity);
             } else if (newQuantity <= 10) { // Max quantity limit
                 existingProduct.setQuantity(newQuantity);
                 log.info("Updated product {} quantity to {} in order {}",
-                        incomingProduct.getId(), newQuantity, cachedOrder.getId());
+                        incomingProduct.getId(), newQuantity, existingOrder.getId());
             } else {
                 // Cap at maximum quantity
                 existingProduct.setQuantity(10);
                 log.warn("Quantity capped at maximum (10) for product {} in order {}",
-                        incomingProduct.getId(), cachedOrder.getId());
+                        incomingProduct.getId(), existingOrder.getId());
             }
         } else {
             // Add new product only if quantity is positive
@@ -238,15 +267,15 @@ public class OrderService {
                         .build());
 
                 log.info("Added new product {} with quantity {} to order {}",
-                        incomingProduct.getId(), finalQuantity, cachedOrder.getId());
+                        incomingProduct.getId(), finalQuantity, existingOrder.getId());
 
                 if (quantity > 10) {
                     log.warn("Quantity reduced to maximum (10) for new product {} in order {}",
-                            incomingProduct.getId(), cachedOrder.getId());
+                            incomingProduct.getId(), existingOrder.getId());
                 }
             } else {
                 log.info("Ignoring request to add product {} with non-positive quantity {} to order {}",
-                        incomingProduct.getId(), quantity, cachedOrder.getId());
+                        incomingProduct.getId(), quantity, existingOrder.getId());
             }
         }
     }
@@ -282,5 +311,9 @@ public class OrderService {
                         orderProduct.getId());
             }
         }
+    }
+    
+    private List<Order> getAllOrders(){
+        return (List<Order>) orderRepository.findAll();
     }
 }

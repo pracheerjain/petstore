@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.Map;
 
 @RestController
-@RequestMapping("/petstoreorderservice/v2")
+@RequestMapping("/petstoreorderservice/v1")
 @Slf4j
 @RequiredArgsConstructor
 @Tag(name = "Info", description = "Pet Store Order Service Information API")

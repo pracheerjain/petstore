@@ -18,7 +18,6 @@ public class CosmosDBConfig {
 //    @Bean
 //    public CosmosClientBuilder cosmosClientBuilder() {
 //        return new CosmosClientBuilder()
-//                .key("iNV4Fd84ubJeVukLSkUTTC6yYdWC95o69hn0EeZt3649YQhFeqEkjju1a5BnFq27QLYc7yuoftY5ACDbRoaaBw==")
 //                .endpoint("https://demo-cosmos-db.documents.azure.com:443/");
 //    }
 //

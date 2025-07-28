@@ -5,7 +5,7 @@ spring:
     azure:
       cosmos:
         uri: https://demo-cosmos-db.documents.azure.com:443/
-        key: iNV4Fd84ubJeVukLSkUTTC6yYdWC95o69hn0EeZt3649YQhFeqEkjju1a5BnFq27QLYc7yuoftY5ACDbRoaaBw==
+        key: trial
         database: petOderDB
 #    spring.cloud.azure.cosmos.endpoint=<YOUR_COSMOS_DB_URI>
 #    spring.cloud.azure.cosmos.key=<YOUR_COSMOS_DB_PRIMARY_KEY>

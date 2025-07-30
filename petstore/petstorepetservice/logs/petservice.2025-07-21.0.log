@@ -1,0 +1,81 @@
+2025-07-21 19:53:40.128 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        c.c.p.pet.PetServiceApplication - Starting PetServiceApplication using Java 19.0.2 with PID 22196 (C:\Pracheer\azure_training\cloudx-java-azure-dev-main\petstore\petstorepetservice\target\classes started by PracheerJain in C:\Pracheer\azure_training\cloudx-java-azure-dev-main\petstore\petstorepetservice)
+2025-07-21 19:53:40.130 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        c.c.p.pet.PetServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-21 19:53:41.480 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-21 19:53:41.513 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 16 ms. Found 0 JPA repository interfaces.
+2025-07-21 19:53:42.610 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-07-21 19:53:42.633 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-21 19:53:42.633 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-21 19:53:42.744 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-21 19:53:42.745 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2556 ms
+2025-07-21 19:53:44.163 [main] WARN  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jpaSharedEM_entityManagerFactory': Cannot resolve reference to bean 'entityManagerFactory' while setting constructor argument
+2025-07-21 19:53:44.168 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2025-07-21 19:53:44.188 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-07-21 19:53:44.219 [main] ERROR [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+A component required a bean named 'entityManagerFactory' that could not be found.
+
+
+Action:
+
+Consider defining a bean named 'entityManagerFactory' in your configuration.
+

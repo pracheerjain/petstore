@@ -3,10 +3,9 @@ package com.chtrembl.petstore.order;
 import com.azure.spring.data.cosmos.repository.config.EnableCosmosRepositories;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.ComponentScan;
-//import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
 
-@SpringBootApplication
+@SpringBootApplication(exclude = DataSourceAutoConfiguration.class)
 @EnableCosmosRepositories(basePackages = "com.chtrembl.petstore.order.repository")
 public class OrderServiceApplication {
 

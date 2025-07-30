@@ -1,0 +1,1037 @@
+2025-07-24 12:48:42.412 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        c.c.p.pet.PetServiceApplication - Starting PetServiceApplication using Java 24.0.1 with PID 6692 (C:\Pracheer\azure_training\cloudx-java-azure-dev-main\petstore\petstorepetservice\target\classes started by PracheerJain in C:\Pracheer\azure_training\cloudx-java-azure-dev-main\petstore\petstorepetservice)
+2025-07-24 12:48:42.417 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        c.c.p.pet.PetServiceApplication - No active profile set, falling back to 1 default profile: "default"
+2025-07-24 12:48:43.382 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-24 12:48:43.401 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 6 ms. Found 0 JPA repository interfaces.
+2025-07-24 12:48:43.405 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-07-24 12:48:43.624 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 217 ms. Found 1 JPA repository interface.
+2025-07-24 12:48:44.817 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.w.e.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2025-07-24 12:48:44.834 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-07-24 12:48:44.834 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.41]
+2025-07-24 12:48:44.924 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring embedded WebApplicationContext
+2025-07-24 12:48:44.925 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2438 ms
+2025-07-24 12:48:45.268 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.jpa.internal.util.LogHelper - HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-07-24 12:48:45.357 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        org.hibernate.Version - HHH000412: Hibernate ORM core version 6.6.15.Final
+2025-07-24 12:48:45.423 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.c.i.RegionFactoryInitiator - HHH000026: Second-level cache disabled
+2025-07-24 12:48:45.536 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BasicTypeReference@5d297d4d
+2025-07-24 12:48:45.537 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration boolean -> org.hibernate.type.BasicTypeReference@5d297d4d
+2025-07-24 12:48:45.537 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Boolean -> org.hibernate.type.BasicTypeReference@5d297d4d
+2025-07-24 12:48:45.537 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration numeric_boolean -> org.hibernate.type.BasicTypeReference@1dd44289
+2025-07-24 12:48:45.538 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration org.hibernate.type.NumericBooleanConverter -> org.hibernate.type.BasicTypeReference@1dd44289
+2025-07-24 12:48:45.538 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration true_false -> org.hibernate.type.BasicTypeReference@6cc56b32
+2025-07-24 12:48:45.538 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration org.hibernate.type.TrueFalseConverter -> org.hibernate.type.BasicTypeReference@6cc56b32
+2025-07-24 12:48:45.538 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration yes_no -> org.hibernate.type.BasicTypeReference@43fe2008
+2025-07-24 12:48:45.538 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration org.hibernate.type.YesNoConverter -> org.hibernate.type.BasicTypeReference@43fe2008
+2025-07-24 12:48:45.538 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.BasicTypeReference@552bee2f
+2025-07-24 12:48:45.538 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration byte -> org.hibernate.type.BasicTypeReference@552bee2f
+2025-07-24 12:48:45.538 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Byte -> org.hibernate.type.BasicTypeReference@552bee2f
+2025-07-24 12:48:45.539 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration binary -> org.hibernate.type.BasicTypeReference@6a543e09
+2025-07-24 12:48:45.539 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration byte[] -> org.hibernate.type.BasicTypeReference@6a543e09
+2025-07-24 12:48:45.539 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration [B -> org.hibernate.type.BasicTypeReference@6a543e09
+2025-07-24 12:48:45.539 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration binary_wrapper -> org.hibernate.type.BasicTypeReference@2d0f548a
+2025-07-24 12:48:45.539 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-binary -> org.hibernate.type.BasicTypeReference@2d0f548a
+2025-07-24 12:48:45.539 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration image -> org.hibernate.type.BasicTypeReference@1fc3df43
+2025-07-24 12:48:45.539 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration blob -> org.hibernate.type.BasicTypeReference@15130002
+2025-07-24 12:48:45.539 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Blob -> org.hibernate.type.BasicTypeReference@15130002
+2025-07-24 12:48:45.539 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration materialized_blob -> org.hibernate.type.BasicTypeReference@5e7cd0df
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration materialized_blob_wrapper -> org.hibernate.type.BasicTypeReference@900649e
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.BasicTypeReference@8b89b3a
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration short -> org.hibernate.type.BasicTypeReference@8b89b3a
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Short -> org.hibernate.type.BasicTypeReference@8b89b3a
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration integer -> org.hibernate.type.BasicTypeReference@526893f
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration int -> org.hibernate.type.BasicTypeReference@526893f
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Integer -> org.hibernate.type.BasicTypeReference@526893f
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.BasicTypeReference@3de45b6c
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration long -> org.hibernate.type.BasicTypeReference@3de45b6c
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Long -> org.hibernate.type.BasicTypeReference@3de45b6c
+2025-07-24 12:48:45.540 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.BasicTypeReference@37caecda
+2025-07-24 12:48:45.541 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration float -> org.hibernate.type.BasicTypeReference@37caecda
+2025-07-24 12:48:45.541 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Float -> org.hibernate.type.BasicTypeReference@37caecda
+2025-07-24 12:48:45.541 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.BasicTypeReference@7be7c052
+2025-07-24 12:48:45.541 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration double -> org.hibernate.type.BasicTypeReference@7be7c052
+2025-07-24 12:48:45.541 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Double -> org.hibernate.type.BasicTypeReference@7be7c052
+2025-07-24 12:48:45.541 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration big_integer -> org.hibernate.type.BasicTypeReference@4ab9d160
+2025-07-24 12:48:45.541 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigInteger -> org.hibernate.type.BasicTypeReference@4ab9d160
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration big_decimal -> org.hibernate.type.BasicTypeReference@5599dc60
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.math.BigDecimal -> org.hibernate.type.BasicTypeReference@5599dc60
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration character -> org.hibernate.type.BasicTypeReference@35554635
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration char -> org.hibernate.type.BasicTypeReference@35554635
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Character -> org.hibernate.type.BasicTypeReference@35554635
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration character_nchar -> org.hibernate.type.BasicTypeReference@70f5f59d
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration string -> org.hibernate.type.BasicTypeReference@74431832
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.String -> org.hibernate.type.BasicTypeReference@74431832
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration nstring -> org.hibernate.type.BasicTypeReference@6fa2a006
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration characters -> org.hibernate.type.BasicTypeReference@70592729
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration char[] -> org.hibernate.type.BasicTypeReference@70592729
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration [C -> org.hibernate.type.BasicTypeReference@70592729
+2025-07-24 12:48:45.542 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration wrapper-characters -> org.hibernate.type.BasicTypeReference@2fdf7da2
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration text -> org.hibernate.type.BasicTypeReference@43b172e3
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration ntext -> org.hibernate.type.BasicTypeReference@39695803
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration clob -> org.hibernate.type.BasicTypeReference@304068
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Clob -> org.hibernate.type.BasicTypeReference@304068
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration nclob -> org.hibernate.type.BasicTypeReference@54d60fa1
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.NClob -> org.hibernate.type.BasicTypeReference@54d60fa1
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration materialized_clob -> org.hibernate.type.BasicTypeReference@1cb849b2
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration materialized_clob_char_array -> org.hibernate.type.BasicTypeReference@6fe2a366
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration materialized_clob_character_array -> org.hibernate.type.BasicTypeReference@6dd38df2
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration materialized_nclob -> org.hibernate.type.BasicTypeReference@99c3cee
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration materialized_nclob_character_array -> org.hibernate.type.BasicTypeReference@57b711b6
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration materialized_nclob_char_array -> org.hibernate.type.BasicTypeReference@2db461b5
+2025-07-24 12:48:45.543 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration Duration -> org.hibernate.type.BasicTypeReference@5c79c5ec
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.Duration -> org.hibernate.type.BasicTypeReference@5c79c5ec
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration LocalDateTime -> org.hibernate.type.BasicTypeReference@34eaf9c1
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.LocalDateTime -> org.hibernate.type.BasicTypeReference@34eaf9c1
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration LocalDate -> org.hibernate.type.BasicTypeReference@5bbf744b
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.LocalDate -> org.hibernate.type.BasicTypeReference@5bbf744b
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration LocalTime -> org.hibernate.type.BasicTypeReference@55881f40
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.LocalTime -> org.hibernate.type.BasicTypeReference@55881f40
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration OffsetDateTime -> org.hibernate.type.BasicTypeReference@474ce6b8
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.OffsetDateTime -> org.hibernate.type.BasicTypeReference@474ce6b8
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration OffsetDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@248b2b61
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration OffsetDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@4b61e97
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration OffsetTime -> org.hibernate.type.BasicTypeReference@11d1735e
+2025-07-24 12:48:45.544 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.OffsetTime -> org.hibernate.type.BasicTypeReference@11d1735e
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration OffsetTimeUtc -> org.hibernate.type.BasicTypeReference@31082efa
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration OffsetTimeWithTimezone -> org.hibernate.type.BasicTypeReference@4ca5cb99
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration OffsetTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@7853363c
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration ZonedDateTime -> org.hibernate.type.BasicTypeReference@6282f1eb
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.ZonedDateTime -> org.hibernate.type.BasicTypeReference@6282f1eb
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration ZonedDateTimeWithTimezone -> org.hibernate.type.BasicTypeReference@120d6cbf
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration ZonedDateTimeWithoutTimezone -> org.hibernate.type.BasicTypeReference@70169464
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration date -> org.hibernate.type.BasicTypeReference@1115be8c
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Date -> org.hibernate.type.BasicTypeReference@1115be8c
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration time -> org.hibernate.type.BasicTypeReference@64ed18ec
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Time -> org.hibernate.type.BasicTypeReference@64ed18ec
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration timestamp -> org.hibernate.type.BasicTypeReference@1dfcf85a
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.sql.Timestamp -> org.hibernate.type.BasicTypeReference@1dfcf85a
+2025-07-24 12:48:45.545 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Date -> org.hibernate.type.BasicTypeReference@1dfcf85a
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration calendar -> org.hibernate.type.BasicTypeReference@590dea35
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Calendar -> org.hibernate.type.BasicTypeReference@590dea35
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.util.GregorianCalendar -> org.hibernate.type.BasicTypeReference@590dea35
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration calendar_date -> org.hibernate.type.BasicTypeReference@6550ce46
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration calendar_time -> org.hibernate.type.BasicTypeReference@69f69078
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration instant -> org.hibernate.type.BasicTypeReference@13b29b34
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.Instant -> org.hibernate.type.BasicTypeReference@13b29b34
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration uuid -> org.hibernate.type.BasicTypeReference@25589735
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.util.UUID -> org.hibernate.type.BasicTypeReference@25589735
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration pg-uuid -> org.hibernate.type.BasicTypeReference@25589735
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration uuid-binary -> org.hibernate.type.BasicTypeReference@46994f26
+2025-07-24 12:48:45.546 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration uuid-char -> org.hibernate.type.BasicTypeReference@1bb172dd
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration class -> org.hibernate.type.BasicTypeReference@1cdd31a4
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Class -> org.hibernate.type.BasicTypeReference@1cdd31a4
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration currency -> org.hibernate.type.BasicTypeReference@7dddfc35
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration Currency -> org.hibernate.type.BasicTypeReference@7dddfc35
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Currency -> org.hibernate.type.BasicTypeReference@7dddfc35
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration locale -> org.hibernate.type.BasicTypeReference@71316cd7
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.util.Locale -> org.hibernate.type.BasicTypeReference@71316cd7
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration serializable -> org.hibernate.type.BasicTypeReference@6106dfb6
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.io.Serializable -> org.hibernate.type.BasicTypeReference@6106dfb6
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration timezone -> org.hibernate.type.BasicTypeReference@14239223
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.util.TimeZone -> org.hibernate.type.BasicTypeReference@14239223
+2025-07-24 12:48:45.547 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration ZoneOffset -> org.hibernate.type.BasicTypeReference@68df8c6
+2025-07-24 12:48:45.548 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.ZoneOffset -> org.hibernate.type.BasicTypeReference@68df8c6
+2025-07-24 12:48:45.548 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration url -> org.hibernate.type.BasicTypeReference@7c206b14
+2025-07-24 12:48:45.548 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.net.URL -> org.hibernate.type.BasicTypeReference@7c206b14
+2025-07-24 12:48:45.548 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration vector -> org.hibernate.type.BasicTypeReference@2b8cf049
+2025-07-24 12:48:45.548 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration float_vector -> org.hibernate.type.BasicTypeReference@2336cd91
+2025-07-24 12:48:45.548 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration double_vector -> org.hibernate.type.BasicTypeReference@4a944af9
+2025-07-24 12:48:45.548 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration byte_vector -> org.hibernate.type.BasicTypeReference@3593e074
+2025-07-24 12:48:45.548 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration row_version -> org.hibernate.type.BasicTypeReference@79d14037
+2025-07-24 12:48:45.557 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration object -> org.hibernate.type.JavaObjectType@6ceb11f9
+2025-07-24 12:48:45.557 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@6ceb11f9
+2025-07-24 12:48:45.559 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration null -> org.hibernate.type.NullType@7be3abaa
+2025-07-24 12:48:45.559 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration imm_date -> org.hibernate.type.BasicTypeReference@29f8134
+2025-07-24 12:48:45.559 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration imm_time -> org.hibernate.type.BasicTypeReference@77a9ac36
+2025-07-24 12:48:45.559 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration imm_timestamp -> org.hibernate.type.BasicTypeReference@3c743d40
+2025-07-24 12:48:45.559 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar -> org.hibernate.type.BasicTypeReference@5aac6f9f
+2025-07-24 12:48:45.559 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar_date -> org.hibernate.type.BasicTypeReference@2444c3df
+2025-07-24 12:48:45.560 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration imm_calendar_time -> org.hibernate.type.BasicTypeReference@1eb6037d
+2025-07-24 12:48:45.560 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration imm_binary -> org.hibernate.type.BasicTypeReference@335b3d6
+2025-07-24 12:48:45.560 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration imm_serializable -> org.hibernate.type.BasicTypeReference@3a5ce4b8
+2025-07-24 12:48:45.842 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-07-24 12:48:45.890 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2025-07-24 12:48:47.136 [main] WARN  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.e.jdbc.spi.SqlExceptionHelper - SQL Error: 0, SQLState: 08001
+2025-07-24 12:48:47.137 [main] ERROR [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.e.jdbc.spi.SqlExceptionHelper - The connection attempt failed.
+2025-07-24 12:48:47.140 [main] WARN  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.e.j.e.i.JdbcEnvironmentInitiator - HHH000342: Could not obtain connection to query metadata
+org.hibernate.exception.JDBCConnectionException: unable to obtain isolated JDBC connection [The connection attempt failed.] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:100)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:58)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:108)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:94)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:116)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.getJdbcEnvironmentUsingJdbcMetadata(JdbcEnvironmentInitiator.java:336)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:129)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator.initiateService(JdbcEnvironmentInitiator.java:81)
+	at org.hibernate.boot.registry.internal.StandardServiceRegistryImpl.initiateService(StandardServiceRegistryImpl.java:130)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.createService(AbstractServiceRegistryImpl.java:263)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.initializeService(AbstractServiceRegistryImpl.java:238)
+	at org.hibernate.service.internal.AbstractServiceRegistryImpl.getService(AbstractServiceRegistryImpl.java:215)
+	at org.hibernate.boot.model.relational.Database.<init>(Database.java:45)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.getDatabase(InFlightMetadataCollectorImpl.java:226)
+	at org.hibernate.boot.internal.InFlightMetadataCollectorImpl.<init>(InFlightMetadataCollectorImpl.java:194)
+	at org.hibernate.boot.model.process.spi.MetadataBuildingProcess.complete(MetadataBuildingProcess.java:171)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.metadata(EntityManagerFactoryBuilderImpl.java:1442)
+	at org.hibernate.jpa.boot.internal.EntityManagerFactoryBuilderImpl.build(EntityManagerFactoryBuilderImpl.java:1513)
+	at org.springframework.orm.jpa.vendor.SpringHibernateJpaPersistenceProvider.createContainerEntityManagerFactory(SpringHibernateJpaPersistenceProvider.java:66)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.createNativeEntityManagerFactory(LocalContainerEntityManagerFactoryBean.java:390)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.buildNativeEntityManagerFactory(AbstractEntityManagerFactoryBean.java:419)
+	at org.springframework.orm.jpa.AbstractEntityManagerFactoryBean.afterPropertiesSet(AbstractEntityManagerFactoryBean.java:400)
+	at org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean.afterPropertiesSet(LocalContainerEntityManagerFactoryBean.java:366)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1873)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1822)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:529)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:339)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:373)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:337)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:207)
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:970)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:627)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:146)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:753)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:439)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:318)
+	at com.chtrembl.petstore.pet.PetServiceApplication.main(PetServiceApplication.java:41)
+Caused by: org.postgresql.util.PSQLException: The connection attempt failed.
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:364)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:54)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:273)
+	at org.postgresql.Driver.makeConnection(Driver.java:446)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:139)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:368)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:205)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:483)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:571)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:101)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:111)
+	at org.hibernate.engine.jdbc.connections.internal.DatasourceConnectionProviderImpl.getConnection(DatasourceConnectionProviderImpl.java:126)
+	at org.hibernate.engine.jdbc.env.internal.JdbcEnvironmentInitiator$ConnectionProviderJdbcConnectionAccess.obtainConnection(JdbcEnvironmentInitiator.java:483)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcIsolationDelegate.delegateWork(JdbcIsolationDelegate.java:61)
+	... 33 common frames omitted
+Caused by: java.net.UnknownHostException: azure-trainingdb.postgres.database.azure.com
+	at java.base/sun.nio.ch.NioSocketImpl.connect(NioSocketImpl.java:558)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:282)
+	at java.base/java.net.Socket.connect(Socket.java:665)
+	at org.postgresql.core.PGStream.createSocket(PGStream.java:260)
+	at org.postgresql.core.PGStream.<init>(PGStream.java:121)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:140)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:268)
+	... 47 common frames omitted
+2025-07-24 12:48:47.190 [main] WARN  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        org.hibernate.orm.deprecation - HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-07-24 12:48:47.204 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (null)']
+	Database driver: undefined/unknown
+	Database version: 12.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-07-24 12:48:47.212 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(2003, org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@20556566) replaced previous registration(org.hibernate.type.descriptor.sql.internal.ArrayDdlTypeImpl@e4ef4c0)
+2025-07-24 12:48:47.212 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.t.d.sql.spi.DdlTypeRegistry - addDescriptor(6, org.hibernate.type.descriptor.sql.internal.CapacityDependentDdlType@5ca8bd01) replaced previous registration(org.hibernate.type.descriptor.sql.internal.DdlTypeImpl@7b10472e)
+2025-07-24 12:48:47.214 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.t.d.jdbc.spi.JdbcTypeRegistry - addDescriptor(2004, BlobTypeDescriptor(BLOB_BINDING)) replaced previous registration(BlobTypeDescriptor(DEFAULT))
+2025-07-24 12:48:47.214 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.t.d.jdbc.spi.JdbcTypeRegistry - addDescriptor(2005, ClobTypeDescriptor(CLOB_BINDING)) replaced previous registration(ClobTypeDescriptor(DEFAULT))
+2025-07-24 12:48:47.224 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration JAVA_OBJECT -> org.hibernate.type.JavaObjectType@186d6033
+2025-07-24 12:48:47.224 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.lang.Object -> org.hibernate.type.JavaObjectType@186d6033
+2025-07-24 12:48:47.224 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Type registration key [java.lang.Object] overrode previous entry : `org.hibernate.type.JavaObjectType@6ceb11f9`
+2025-07-24 12:48:47.232 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration org.hibernate.type.DurationType -> basicType@1(java.time.Duration,3015)
+2025-07-24 12:48:47.232 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration Duration -> basicType@1(java.time.Duration,3015)
+2025-07-24 12:48:47.232 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.Duration -> basicType@1(java.time.Duration,3015)
+2025-07-24 12:48:47.235 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration org.hibernate.type.OffsetDateTimeType -> basicType@2(java.time.OffsetDateTime,3003)
+2025-07-24 12:48:47.235 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration OffsetDateTime -> basicType@2(java.time.OffsetDateTime,3003)
+2025-07-24 12:48:47.235 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.OffsetDateTime -> basicType@2(java.time.OffsetDateTime,3003)
+2025-07-24 12:48:47.235 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration org.hibernate.type.ZonedDateTimeType -> basicType@3(java.time.ZonedDateTime,3003)
+2025-07-24 12:48:47.235 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration ZonedDateTime -> basicType@3(java.time.ZonedDateTime,3003)
+2025-07-24 12:48:47.235 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.ZonedDateTime -> basicType@3(java.time.ZonedDateTime,3003)
+2025-07-24 12:48:47.236 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration org.hibernate.type.OffsetTimeType -> basicType@4(java.time.OffsetTime,3007)
+2025-07-24 12:48:47.236 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration OffsetTime -> basicType@4(java.time.OffsetTime,3007)
+2025-07-24 12:48:47.236 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.hibernate.type.BasicTypeRegistry - Adding type registration java.time.OffsetTime -> basicType@4(java.time.OffsetTime,3007)
+2025-07-24 12:48:47.237 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.type.spi.TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@5cd6719d] to MetadataBuildingContext [org.hibernate.boot.internal.MetadataBuildingContextRootImpl@5ef591af]
+2025-07-24 12:48:48.374 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.e.t.j.p.i.JtaPlatformInitiator - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-07-24 12:48:48.374 [main] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.type.spi.TypeConfiguration$Scope - Scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration@5cd6719d] to SessionFactoryImplementor [org.hibernate.internal.SessionFactoryImpl@549be307]
+2025-07-24 12:48:48.379 [main] TRACE [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.type.spi.TypeConfiguration$Scope - Handling #sessionFactoryCreated from [org.hibernate.internal.SessionFactoryImpl@549be307] for TypeConfiguration
+2025-07-24 12:48:48.380 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-07-24 12:48:48.870 [main] WARN  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.a.o.j.JpaBaseConfiguration$JpaWebConfiguration - spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-07-24 12:48:49.552 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.a.e.web.EndpointLinksResolver - Exposing 2 endpoints beneath base path '/actuator'
+2025-07-24 12:48:49.671 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.w.e.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/'
+2025-07-24 12:48:49.687 [main] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        c.c.p.pet.PetServiceApplication - Started PetServiceApplication in 8.077 seconds (process running for 8.831)
+2025-07-24 12:49:15.961 [http-nio-8081-exec-1] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.a.c.c.C.[Tomcat].[localhost].[/] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-07-24 12:49:15.961 [http-nio-8081-exec-1] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2025-07-24 12:49:15.963 [http-nio-8081-exec-1] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2025-07-24 12:49:16.974 [http-nio-8081-exec-10] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 619 ms
+2025-07-24 12:49:21.938 [SpringApplicationShutdownHook] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.w.e.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2025-07-24 12:49:21.953 [tomcat-shutdown] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.b.w.e.tomcat.GracefulShutdown - Graceful shutdown complete
+2025-07-24 12:49:22.022 [SpringApplicationShutdownHook] INFO  [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-07-24 12:49:22.022 [SpringApplicationShutdownHook] TRACE [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.type.spi.TypeConfiguration$Scope - Handling #sessionFactoryClosed from [org.hibernate.internal.SessionFactoryImpl@549be307] for TypeConfiguration
+2025-07-24 12:49:22.022 [SpringApplicationShutdownHook] DEBUG [sessionId=NO_SESSION]
+        [reqId=] [traceId=] [spanId=] [parentSpan=]
+        [uri=] [method=] [status=]
+        [duration=ms] [clientIp=] [userAgent=]
+        o.h.type.spi.TypeConfiguration$Scope - Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@3e596a6a] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@549be307]

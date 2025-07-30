@@ -57,6 +57,9 @@ public class ContainerEnvironment implements Serializable {
 	@Value("${petstore.service.order.url:}")
 	private String petStoreOrderServiceURL;
 
+	@Value("${azure.function.url}")
+	private String azureFunctionURL;
+
 	@Value("${petstore.service.subscription.key:}")
 	private String petStoreServicesSubscriptionKey;
 
@@ -274,5 +277,9 @@ public class ContainerEnvironment implements Serializable {
 				.accept(MediaType.APPLICATION_JSON).header("Content-Type", MediaType.APPLICATION_JSON_VALUE)
 				.header("Cache-Control", "no-cache").header("Authorization", "Bearer " + accessKey).retrieve()
 				.bodyToMono(Object.class).block();
+	}
+
+	public String getAzureFunctionURL() {
+		return azureFunctionURL;
 	}
 }

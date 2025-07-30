@@ -1,79 +1,60 @@
 package com.chtrembl.petstore.product.model;
 
-import ch.qos.logback.core.joran.spi.JoranException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import jakarta.annotation.PostConstruct;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.stereotype.Component;
 
-import javax.annotation.PostConstruct;
 import java.io.IOException;
-import java.io.Serializable;
+import java.io.InputStream;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 import java.util.Calendar;
 
-@SuppressWarnings("serial")
-public class ContainerEnvironment implements Serializable {
-	private static Logger logger = LoggerFactory.getLogger(ContainerEnvironment.class);
-	private String containerHostName = null;
-	private String appVersion = null;
-	private String appDate = null;
-	private String year = null;
+@Component
+@Setter
+@Getter
+@Slf4j
+public class ContainerEnvironment {
+    private String containerHostName;
+    private String appVersion;
+    private String appDate;
+    private String year;
 
-	@PostConstruct
-	private void initialize() throws JoranException {
+    @PostConstruct
+    private void initialize() {
+        try {
+            this.setContainerHostName(
+                    InetAddress.getLocalHost().getHostAddress() + "/" + InetAddress.getLocalHost().getHostName());
+        } catch (UnknownHostException e) {
+            this.setContainerHostName("unknown");
+        }
 
-		try {
-			this.setContainerHostName(
-					InetAddress.getLocalHost().getHostAddress() + "/" + InetAddress.getLocalHost().getHostName());
-		} catch (UnknownHostException e) {
-			this.setContainerHostName("unknown");
-		}
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            ClassPathResource resource = new ClassPathResource("version.json");
 
-		try {
-			ObjectMapper objectMapper = new ObjectMapper();
-			Version version = objectMapper.readValue(new ClassPathResource("version.json").getFile(), Version.class);
-			this.setAppVersion(version.getVersion());
-			this.setAppDate(version.getDate());
-		} catch (IOException e) {
-			logger.info("error parsing file " + e.getMessage());
-			this.setAppVersion("unknown");
-			this.setAppDate("unknown");
-		}
+            try (InputStream inputStream = resource.getInputStream()) {
+                Version version = objectMapper.readValue(inputStream, Version.class);
+                this.setAppVersion(version.getVersion());
+                this.setAppDate(version.getDate());
+            }
+        } catch (IOException e) {
+            log.error("Error parsing file {}", e.getMessage());
+            this.setAppVersion("unknown");
+            this.setAppDate("unknown");
+        }
 
-		this.setYear(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
-	}
+        this.setYear(String.valueOf(Calendar.getInstance().get(Calendar.YEAR)));
+    }
 
-	public String getContainerHostName() {
-		return containerHostName;
-	}
-
-	public void setContainerHostName(String containerHostName) {
-		this.containerHostName = containerHostName;
-	}
-
-	public String getAppVersion() {
-		return appVersion;
-	}
-
-	public void setAppVersion(String appVersion) {
-		this.appVersion = appVersion;
-	}
-
-	public String getAppDate() {
-		return appDate;
-	}
-
-	public void setAppDate(String appDate) {
-		this.appDate = appDate;
-	}
-
-	public String getYear() {
-		return year;
-	}
-
-	public void setYear(String year) {
-		this.year = year;
-	}
+    public String getAppVersion() {
+        if ("version".equals(this.appVersion) || this.appVersion == null) {
+            return String.valueOf(System.currentTimeMillis());
+        }
+        return this.appVersion;
+    }
 }

@@ -5,7 +5,7 @@ spring:
     azure:
       cosmos:
         endpoint: https://azure-training-cosmosdb.documents.azure.com:443/
-        key: icBpvBnxwj5x6ys0tQznqWv4GJvEw5Og4afXVeqfQPfjhrCsi0kvFi2ADNgwiMNnmfXhnGiBrYBRACDb8DxGUw==
+        key: trial
         database: petOderDB
 #    spring.cloud.azure.cosmos.endpoint=<YOUR_COSMOS_DB_URI>
 #    spring.cloud.azure.cosmos.key=<YOUR_COSMOS_DB_PRIMARY_KEY>

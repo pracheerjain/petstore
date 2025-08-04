@@ -4,7 +4,7 @@ spring:
   datasource:
     url: jdbc:postgresql://azure-trainingdb.postgres.database.azure.com:5432/petstoreproductservice_db?sslmode=require
     username: azure
-    password: Live#king2002
+    password: L
   jpa:
     hibernate:
       ddl-auto: none

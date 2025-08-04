@@ -15,11 +15,9 @@ import java.util.stream.Collectors;
 
 @Service
 @Slf4j
-//@RequiredArgsConstructor
 public class OrderService {
 
     private static final String ORDERS = "orders";
-//    private final CacheManager cacheManager;
 
     @Autowired
     private final ProductService productService;
@@ -51,29 +49,13 @@ public class OrderService {
      */
     public Order getOrderById(String orderId) {
         log.info("Retrieving order from repository: {}", orderId);
-
         // Validate orderId (not covered by Bean Validation for path variables)
         if (orderId == null || orderId.trim().isEmpty()) {
             throw new IllegalArgumentException("Order ID cannot be null or empty");
         }
-
         // Try to get from cosmos DB
         Order orderById = getOrderByOrderId(orderId);
         if (orderById != null) return orderById;
-
-//        // Try to get from cache
-//        Cache cache = cacheManager.getCache(ORDERS);
-//        if (cache != null) {
-//            Cache.ValueWrapper wrapper = cache.get(orderId);
-//            if (wrapper != null) {
-//                Order existingOrder = (Order) wrapper.get();
-//                if (existingOrder != null) {
-//                    log.info("Found existing order: {}", orderId);
-//                    return existingOrder;
-//                }
-//            }
-//        }
-
         // Order not found - throw exception instead of creating new one
         log.warn("Order not found: {}", orderId);
         throw new OrderNotFoundException("Order with ID " + orderId + " not found");
@@ -81,7 +63,6 @@ public class OrderService {
 
     private Order getOrderByOrderId(String orderId) {
         Optional<Order> orderById= orderRepository.findById(orderId);
-
         if (orderById.isPresent()){
             log.info("Found existing order: {}", orderId);
             return orderById.get();
@@ -100,26 +81,10 @@ public class OrderService {
         Order orderById = getOrderByOrderId(orderId);
         if (orderById != null) return orderById;
 
-//        // Try to get from cache first
-//        Cache cache = cacheManager.getCache(ORDERS);
-//        if (cache != null) {
-//            Cache.ValueWrapper wrapper = cache.get(orderId);
-//            if (wrapper != null) {
-//                Order existingOrder = (Order) wrapper.get();
-//                if (existingOrder != null) {
-//                    log.info("Found existing order for update: {}", orderId);
-//                    return existingOrder;
-//                }
-//            }
-//        }
-
         // Create new order if not found
         log.info("Creating new order for update: {}", orderId);
         Order newOrder = createOrder(orderId);
         orderRepository.save(newOrder);
-//        if (cache != null) {
-//            cache.put(orderId, newOrder);
-//        }
 
         return newOrder;
     }
@@ -157,12 +122,6 @@ public class OrderService {
 
         // Explicitly update cosmos DB
         orderRepository.save(existingOrder);
-
-        // Explicitly update cache
-//        Cache cache = cacheManager.getCache(ORDERS);
-//        if (cache != null) {
-//            cache.put(order.getId(), existingOrder);
-//        }
 
         return existingOrder;
     }
@@ -312,8 +271,5 @@ public class OrderService {
             }
         }
     }
-    
-    private List<Order> getAllOrders(){
-        return (List<Order>) orderRepository.findAll();
-    }
+
 }

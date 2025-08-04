@@ -5,11 +5,9 @@ spring:
     azure:
       cosmos:
         endpoint: https://azure-training-cosmosdb.documents.azure.com:443/
-        key: trial
+        key: ic
         database: petOderDB
-#    spring.cloud.azure.cosmos.endpoint=<YOUR_COSMOS_DB_URI>
-#    spring.cloud.azure.cosmos.key=<YOUR_COSMOS_DB_PRIMARY_KEY>
-#    spring.cloud.azure.cosmos.database=<YOUR_DATABASE_NAME>
+
 server:
   port: ${PETSTOREORDERSERVICE_SERVER_PORT:8080}
 

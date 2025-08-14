@@ -64,16 +64,29 @@
             <artifactId>spring-cloud-azure-starter-jdbc-postgresql</artifactId>
             <version>4.5.0</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.chtrembl.petstore.product</groupId>-->
-<!--            <artifactId>petstoreproductservice</artifactId>-->
-<!--            <version>0.0.1-SNAPSHOT</version>-->
-<!--        </dependency>-->
         <dependency>
             <groupId>javax.ws.rs</groupId>
             <artifactId>javax.ws.rs-api</artifactId>
             <version>2.1-m07</version>
         </dependency>
+
+        <!-- Azure Key Vault Spring Boot Starter -->
+<!--        <dependency>-->
+<!--            <groupId>com.azure.spring</groupId>-->
+<!--            <artifactId>azure-spring-boot-starter-keyvault-secrets</artifactId>-->
+<!--            <version>4.0.0</version>-->
+<!--        </dependency>-->
+
+        <dependency>
+            <groupId>com.azure.spring</groupId>
+            <artifactId>spring-cloud-azure-starter-keyvault-secrets</artifactId>
+            <version>5.9.0</version>
+        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>com.azure.spring</groupId>-->
+<!--            <artifactId>spring-cloud-azure-starter-identity-managed-identity</artifactId>-->
+<!--        </dependency>-->
 
         <!-- PostgreSQL Driver -->
         <dependency>

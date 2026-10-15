@@ -1,63 +1,106 @@
 package com.chtrembl.petstoreapp.security;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.config.annotation.web.builders.HttpSecurity;
-import org.springframework.security.config.annotation.web.builders.WebSecurity;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
 import com.chtrembl.petstoreapp.model.ContainerEnvironment;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
+import org.springframework.security.web.SecurityFilterChain;
 
-/**
- * Wire up Spring Security
- */
+@Configuration
 @EnableWebSecurity
-public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
-	private static Logger logger = LoggerFactory.getLogger(WebSecurityConfiguration.class);
+@RequiredArgsConstructor
+@Slf4j
+public class WebSecurityConfiguration {
 
-	@Autowired(required = false)
-	private AADB2COidcLoginConfigurerWrapper aadB2COidcLoginConfigurerWrapper = null;
+    private final ContainerEnvironment containerEnvironment;
 
-	@Autowired
-	private ContainerEnvironment containeEnvironment;
+    @Value("${petstore.security.enabled:false}")
+    private boolean securityEnabled;
 
-	@Override
-	public void configure(WebSecurity web) throws Exception {
-		if (this.aadB2COidcLoginConfigurerWrapper != null
-				&& this.aadB2COidcLoginConfigurerWrapper.getConfigurer() != null) {
-			web.ignoring().antMatchers("/content/**");
-			web.ignoring().antMatchers("/.well-known/**");
-		}
-	}
+    @Value("${azure.entra.external-id.tenant-domain:petshopdemo}")
+    private String tenantDomain;
 
-	@Override
-	protected void configure(HttpSecurity http) throws Exception {
+    @Value("${AZURE_CLIENT_ID:}")
+    private String clientId;
 
-		if (this.aadB2COidcLoginConfigurerWrapper != null
-				&& this.aadB2COidcLoginConfigurerWrapper.getConfigurer() != null) {
+    @Bean
+    public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-			http.csrf().ignoringAntMatchers("/signalr/**").and().authorizeRequests().antMatchers("/")
-					.permitAll()
-					.antMatchers("/*breed*").permitAll()
-					.antMatchers("/*product*").permitAll()
-					.antMatchers("/*cart*").permitAll()
-					.antMatchers("/api/contactus").permitAll()
-					.antMatchers("/slowness").permitAll()
-					.antMatchers("/exception").permitAll()
-					.antMatchers("/introspectionSimulation*").permitAll()
-					.antMatchers("/bingSearch*").permitAll()
-					.antMatchers("/signalr/negotiate").permitAll()
-					.antMatchers("/signalr/test").permitAll()
-					.antMatchers("/login*").permitAll().anyRequest()
-					.authenticated().and().apply(this.aadB2COidcLoginConfigurerWrapper.getConfigurer()).and()
-					.oauth2Login().loginPage("/login");
+        if (!securityEnabled) {
+            http.csrf(AbstractHttpConfigurer::disable)
+                    .authorizeHttpRequests(authz -> authz.anyRequest().permitAll());
+            containerEnvironment.setSecurityEnabled(false);
+            log.warn("Security is DISABLED via petstore.security.enabled = false");
+            return http.build();
+        }
 
-			this.containeEnvironment.setSecurityEnabled(true);
-		} else {
-			logger.warn(
-					"azure.activedirectory.b2c.tenant, azure.activedirectory.b2c.client-id, azure.activedirectory.b2c.client-secret and azure.activedirectory.b2c.logout-success-url must be set for Azure B2C Authentication to be enabled, considering configuring Azure B2C App Registration if you would like to authenticate users.");
-		}
-	}
+        // Check if External ID is properly configured
+        boolean externalIdConfigured = tenantDomain != null && !tenantDomain.isEmpty() &&
+                clientId != null && !clientId.isEmpty();
+
+        if (!externalIdConfigured) {
+            http.csrf(AbstractHttpConfigurer::disable)
+                    .authorizeHttpRequests(authz -> authz.anyRequest().permitAll());
+            containerEnvironment.setSecurityEnabled(false);
+            log.warn("Security ENABLED but External ID not configured - fallback to DISABLED");
+            return http.build();
+        }
+
+        // External ID OAuth2 configuration
+        http.csrf(csrf -> csrf.ignoringRequestMatchers("/content/**", "/.well-known/**"))
+                .authorizeHttpRequests(authz -> authz
+                        .requestMatchers("/").permitAll()
+                        .requestMatchers("/*breed*").permitAll()
+                        .requestMatchers("/*product*").permitAll()
+                        .requestMatchers("/*cart*").permitAll()
+                        .requestMatchers("/api/contactus").permitAll()
+                        .requestMatchers("/login*").permitAll()
+                        .requestMatchers("/content/**").permitAll()
+                        .requestMatchers("/.well-known/**").permitAll()
+                        .requestMatchers("/actuator/health").permitAll()
+                        .requestMatchers("/actuator/info").permitAll()
+                        .anyRequest().authenticated()
+                )
+                .oauth2Login(oauth2 -> oauth2
+                        .defaultSuccessUrl("/", true)
+                )
+                .logout(logout -> logout
+                        .logoutUrl("/logout")
+                        .logoutSuccessHandler(this::handleLogoutSuccess)
+                );
+
+        containerEnvironment.setSecurityEnabled(true);
+        log.info("Security is ENABLED using Microsoft Entra External ID OAuth2");
+
+        return http.build();
+    }
+
+    /**
+     * Custom logout success handler that redirects to External ID logout URL
+     */
+    private void handleLogoutSuccess(HttpServletRequest request,
+                                     HttpServletResponse response,
+                                     org.springframework.security.core.Authentication authentication)
+            throws java.io.IOException {
+
+        String baseUrl = request.getScheme() + "://" + request.getServerName() +
+                ":" + request.getServerPort();
+
+        if (tenantDomain != null && !tenantDomain.isEmpty()) {
+            String logoutUrl = "https://" + tenantDomain + ".ciamlogin.com/" +
+                    tenantDomain + ".onmicrosoft.com/oauth2/v2.0/logout" +
+                    "?post_logout_redirect_uri=" + baseUrl;
+            response.sendRedirect(logoutUrl);
+        } else {
+            log.warn("AZURE_TENANT_DOMAIN not configured, using default logout");
+            response.sendRedirect("/");
+        }
+    }
 }

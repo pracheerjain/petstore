@@ -1,37 +1,37 @@
-bing:
-  search:
-    subscription:
-      key: ${BING_SEARCH_SUBSCRIPTION_KEY:}
 petstore:
   service:
     pet:
-     url: ${PETSTOREPETSERVICE_URL:http://localhost:8080}
+      url: ${PETSTOREPETSERVICE_URL:http://localhost:8081}
     product:
-      url: ${PETSTOREPRODUCTSERVICE_URL:http://localhost:8080}
+      url: ${PETSTOREPRODUCTSERVICE_URL:http://localhost:8082}
     order:
-      url: ${PETSTOREORDERSERVICE_URL:http://localhost:8080}
-  logging:
-    additional-headers-to-log: ${PETSTORE_ADDITIONAL_HEADERS_TO_LOG:}
-    additional-headers-to-send: ${PETSTORE_ADDITIONAL_HEADERS_TO_SEND:}
-  signalR:
-    negotiation-url: ${SIGNALR_NEGOTIATION_URL:}
-    service-url: ${SIGNALR_SERVICE_URL:}
-    key: ${SIGNALR_SERVICE_KEY:}
-    update:
-      fixedRate: ${SIGNALR_UPDATE_FIXEDRATE:60000}
+      url: ${PETSTOREORDERSERVICE_URL:http://localhost:8083}
+  messaging:
+    enabled: ${PETSTORE_MESSAGING_ENABLED:false}
+    queue-name: ${SERVICE_BUS_QUEUE_NAME:order-items-queue}
+  security:
+    # Enable in Module 10
+    enabled: ${PETSTORE_SECURITY_ENABLED:false}
 server:
   port: ${PETSTOREAPP_SERVER_PORT:8080}
 management:
   endpoints:
     web:
       exposure:
-        include: "*"       
-  trace:
-    http:
-      enabled: true 
+        include: health,info
   endpoint:
-    httptrace:
-      enabled: true
+    health:
+      show-details: always
+      show-components: always
+  health:
+    ssl:
+      enabled: false
+    diskspace:
+      enabled: false
+    applicationinsights:
+      enabled: false
+    security:
+      enabled: false
 spring:
   application:
     name: petstoreapp
@@ -39,3 +39,34 @@ spring:
     cache: false
   cache:
     cache-names: currentUsers
+  cloud:
+    discovery:
+      enabled: false
+    refresh:
+      enabled: false
+  security:
+    # Used in Module 10
+    oauth2:
+      client:
+        registration:
+          azure:
+            client-id: ${AZURE_CLIENT_ID:00000000-0000-0000-0000-000000000000}
+            client-secret: ${AZURE_CLIENT_SECRET:}
+            scope:
+              - openid
+              - profile
+              - email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            authorization-grant-type: authorization_code
+        provider:
+          azure:
+            authorization-uri: https://${AZURE_TENANT_DOMAIN:petshopdemo}.ciamlogin.com/${AZURE_TENANT_DOMAIN:petshopdemo}.onmicrosoft.com/oauth2/v2.0/authorize
+            token-uri: https://${AZURE_TENANT_DOMAIN:petshopdemo}.ciamlogin.com/${AZURE_TENANT_DOMAIN:petshopdemo}.onmicrosoft.com/oauth2/v2.0/token
+            jwk-set-uri: https://${AZURE_TENANT_DOMAIN:petshopdemo}.ciamlogin.com/${AZURE_TENANT_DOMAIN:petshopdemo}.onmicrosoft.com/discovery/v2.0/keys
+            user-name-attribute: sub
+logging:
+  level:
+    root: INFO
+    com.chtrembl.petstoreapp: INFO
+    com.azure.monitor.opentelemetry.autoconfigure.implementation.quickpulse.QuickPulsePingSender: ERROR
+    com.azure.core.http.netty.NettyAsyncHttpClient: ERROR

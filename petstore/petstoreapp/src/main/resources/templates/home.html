@@ -1,28 +1,52 @@
-<!doctype html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head lang="en" th:replace="fragments/head :: head"></head>
+<head th:replace="~{fragments/head :: head}"></head>
 
 <body>
-	<div lang="en" th:replace="fragments/header :: header"></div>
-	<div
-		class="pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
-		<h1 class="display-4">Welcome to the Azure Pet Store</h1>
-		<h1 class="display-4" style="font-size:2.5rem;" th:if="${!#strings.isEmpty(signalRNegotiationURL)}">
-				There is currently <span id="currentUsers" style="font-weight:500;color:#3C7BB7;" th:text="${currentUsersOnSite}"></span> live shoppers online via <a href="https://azure.microsoft.com/en-us/services/signalr-service/" target="blank"><img class="signalR" src="content/SignalR-logo.png" /></a></h1>
-		<h2 class="subHeader">Start exploring & learning Azure today!</h2>
-		<p>Begin by shopping for products below!</p>
-		<p>v2</p>
-		<div id="banner">
-			<center>
-				<figure>
-					<img class="banner" src="content/banner.png" />
-				</figure>
-			</center>
+<div th:replace="~{fragments/header :: header}"></div>
+
+<!-- Hero Section -->
+<div class="hero-section py-5">
+	<div class="container">
+		<div class="row align-items-center">
+			<div class="col-lg-6">
+				<div class="hero-content">
+					<h1 class="display-4 fw-bold mb-4">Welcome to the <span class="text-primary">Azure&nbsp;Pet&nbsp;Store</span>
+					</h1>
+					<h2 class="h4 text-muted mb-4">Start exploring and learning Azure today!</h2>
+					<p class="lead mb-4">Discover amazing products for your beloved pets while learning cloud
+						technologies.</p>
+
+					<!-- Call-to-action buttons -->
+					<div class="d-flex flex-wrap gap-3 mb-5">
+						<a class="btn btn-outline-primary btn-lg rounded-pill px-4 hero-btn"
+						   href="/dogbreeds?category=Dog">
+							<i class="bi bi-heart me-2"></i>Shop for Dogs
+						</a>
+						<a class="btn btn-outline-primary btn-lg rounded-pill px-4 hero-btn"
+						   href="/dogbreeds?category=Cat">
+							<i class="bi bi-heart me-2"></i>Shop for Cats
+						</a>
+						<a class="btn btn-outline-primary btn-lg rounded-pill px-4 hero-btn"
+						   href="/dogbreeds?category=Fish">
+							<i class="bi bi-heart me-2"></i>Shop for Fish
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="hero-image text-center">
+					<img alt="Azure Pet Store Banner"
+						 class="img-fluid rounded-3 banner-modern"
+						 src="content/banner.png"/>
+				</div>
+			</div>
 		</div>
 	</div>
-	<div lang="en" th:replace="fragments/footer :: footer"></div>
-	<div lang="en" th:replace="fragments/disclaimer :: disclaimer"></div>
+</div>
+
+<div lang="en" th:replace="~{fragments/footer :: footer}"></div>
+<div lang="en" th:replace="~{fragments/disclaimer :: disclaimer}"></div>
 </body>
 
 </html>

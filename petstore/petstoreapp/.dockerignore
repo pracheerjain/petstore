@@ -1,0 +1,13 @@
+.git/
+**/.git/
+target/
+**/target/
+logs/
+**/logs/
+.run/
+**/.run/
+.env
+**/.env
+local.settings.json
+**/local.settings.json
+*.log

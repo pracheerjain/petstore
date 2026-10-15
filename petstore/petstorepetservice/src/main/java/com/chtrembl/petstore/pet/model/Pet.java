@@ -1,23 +1,26 @@
 package com.chtrembl.petstore.pet.model;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import jakarta.persistence.*;
+import com.fasterxml.jackson.annotation.JsonValue;
 import jakarta.validation.Valid;
 import jakarta.validation.constraints.NotNull;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@Entity
-@Table(name = "pet")
+@NoArgsConstructor
+@AllArgsConstructor
+@Builder
 public class Pet {
-    @Id
     private Long id;
 
     @Valid
-    @Embedded
-    @ManyToOne
     private Category category;
 
     @NotNull
@@ -28,15 +31,9 @@ public class Pet {
     private String photoURL;
 
     @Valid
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(
-            name = "pet_tag", // Match the table name in the database
-            joinColumns = @JoinColumn(name = "pet_id"), // Match the column name in the database
-            inverseJoinColumns = @JoinColumn(name = "tag_id") // Match the column name in the database
-    )
-    private List<Tag> tags;
+    @Builder.Default
+    private List<Tag> tags = new ArrayList<>();
 
-    @Enumerated(EnumType.STRING)
     private Status status;
 
     public Pet name(String name) {
@@ -45,11 +42,34 @@ public class Pet {
     }
 
     public enum Status {
-        available,
-        pending,
-        sold;
+        AVAILABLE("available"),
+        PENDING("pending"),
+        SOLD("sold");
 
-        Status() { }
+        private final String value;
 
+        Status(String value) {
+            this.value = value;
+        }
+
+        @JsonCreator
+        public static Status fromValue(String value) {
+            for (Status b : Status.values()) {
+                if (b.value.equals(value)) {
+                    return b;
+                }
+            }
+            throw new IllegalArgumentException("Unexpected value '" + value + "'");
+        }
+
+        @JsonValue
+        public String getValue() {
+            return value;
+        }
+
+        @Override
+        public String toString() {
+            return String.valueOf(value);
+        }
     }
 }

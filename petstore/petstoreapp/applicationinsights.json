@@ -1,3 +1,0 @@
-{
-  "connectionString": "InstrumentationKey=c1236205-9cb8-4011-8469-b3a9df48b2d6;IngestionEndpoint=https://centralindia-0.in.applicationinsights.azure.com/;LiveEndpoint=https://centralindia.livediagnostics.monitor.azure.com/;ApplicationId=63eb18e7-3673-4cdc-a39e-40b7c75d6960"
-}

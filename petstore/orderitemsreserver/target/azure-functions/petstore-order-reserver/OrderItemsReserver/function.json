@@ -1,0 +1,12 @@
+{
+  "scriptFile" : "../orderitemsreserver-1.0.0.jar",
+  "entryPoint" : "com.chtrembl.petstore.reserver.function.OrderItemsReserverFunction.run",
+  "bindings" : [ {
+    "type" : "serviceBusTrigger",
+    "direction" : "in",
+    "name" : "message",
+    "queueName" : "%SERVICE_BUS_QUEUE_NAME%",
+    "isSessionsEnabled" : true,
+    "connection" : "ServiceBusConnection"
+  } ]
+}

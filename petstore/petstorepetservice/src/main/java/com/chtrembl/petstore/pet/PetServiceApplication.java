@@ -2,33 +2,24 @@ package com.chtrembl.petstore.pet;
 
 import com.chtrembl.petstore.pet.model.ContainerEnvironment;
 import com.chtrembl.petstore.pet.model.DataPreload;
-import com.chtrembl.petstore.pet.repository.PetRepository;
-import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.ExitCodeGenerator;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
-import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
-@SpringBootApplication(scanBasePackages = "com.chtrembl.petstore.pet")
-@EnableJpaRepositories
+@SpringBootApplication
 public class PetServiceApplication implements CommandLineRunner {
-
-//	@Autowired
-//	private PetRepository petRepository;
 
 	@Bean
 	public ContainerEnvironment containerEnvvironment() {
 		return new ContainerEnvironment();
 	}
 
-//	@Bean
-//	public DataPreload dataPreload() {
-//
-//		return new DataPreload(petRepository);
-//	}
+	@Bean
+	public DataPreload dataPreload() {
+		return new DataPreload();
+	}
 
 	@Override
 	public void run(String... arg0) throws Exception {

@@ -1,0 +1,8 @@
+.git/
+target/
+logs/
+.env
+**/.env
+local.settings.json
+**/local.settings.json
+*.log

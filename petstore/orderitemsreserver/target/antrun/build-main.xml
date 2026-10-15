@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="maven-antrun-" default="main">
+  <target name="main">
+    <delete file="C:\Users\Pracheer_Jain\Desktop\Azure course\cloudx-java-azure-dev-main_jul26\cloudx-java-azure-dev-main\petstore\orderitemsreserver\target/azure-functions/petstore-order-reserver/local.settings.json" />
+  </target>
+</project>

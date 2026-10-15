@@ -1,0 +1,8 @@
+com\chtrembl\petstore\reserver\function\OrderItemsReserverFunction.class
+com\chtrembl\petstore\reserver\model\OrderRequest.class
+com\chtrembl\petstore\reserver\model\OrderRequest$ProductItem$ProductItemBuilder.class
+com\chtrembl\petstore\reserver\model\OrderRequest$CategoryItem.class
+com\chtrembl\petstore\reserver\model\OrderRequest$OrderRequestBuilder.class
+com\chtrembl\petstore\reserver\service\BlobStorageService.class
+com\chtrembl\petstore\reserver\model\OrderRequest$ProductItem.class
+com\chtrembl\petstore\reserver\model\OrderRequest$CategoryItem$CategoryItemBuilder.class

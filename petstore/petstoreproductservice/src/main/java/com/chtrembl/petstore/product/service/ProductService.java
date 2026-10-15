@@ -1,7 +1,8 @@
 package com.chtrembl.petstore.product.service;
 
+import com.chtrembl.petstore.product.model.DataPreload;
 import com.chtrembl.petstore.product.model.Product;
-import com.chtrembl.petstore.product.repository.PetRepository;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
@@ -10,36 +11,33 @@ import java.util.Optional;
 
 @Service
 @Slf4j
+@RequiredArgsConstructor
 public class ProductService {
 
-    private final PetRepository petRepository;
-
-    public ProductService(PetRepository petRepository) {
-        this.petRepository = petRepository;
-    }
+    private final DataPreload dataPreload;
 
     public List<Product> findProductsByStatus(List<String> status) {
         log.info("Finding products with status: {}", status);
 
-        return getAllProducts().stream()
-                .filter(product -> status.contains(product.getStatus().toString()))
+        return dataPreload.getProducts().stream()
+                .filter(product -> status.contains(product.getStatus().getValue()))
                 .toList();
     }
 
     public Optional<Product> findProductById(Long productId) {
         log.info("Finding product with id: {}", productId);
 
-        return getAllProducts().stream()
+        return dataPreload.getProducts().stream()
                 .filter(product -> product.getId().equals(productId))
                 .findFirst();
     }
 
     public List<Product> getAllProducts() {
         log.info("Getting all products");
-        return petRepository.findAll();
+        return dataPreload.getProducts();
     }
 
     public int getProductCount() {
-        return petRepository.findAll().size();
+        return dataPreload.getProducts().size();
     }
 }
